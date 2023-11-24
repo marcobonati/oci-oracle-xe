@@ -24,7 +24,7 @@ set -Eeuo pipefail
 
 VERSION="21.3.0"
 FLAVOR="REGULAR"
-IMAGE_NAME="gvenzl/oracle-xe"
+IMAGE_NAME="mbonati/oracle-xe"
 SKIP_CHECKSUM="false"
 FASTSTART="false"
 BASE_IMAGE=""

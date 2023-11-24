@@ -90,6 +90,9 @@ usermod -d ${ORACLE_BASE} oracle
 sed -i "s/LISTENER_PORT=/LISTENER_PORT=1521/g" /etc/sysconfig/oracle-xe-21c.conf
 sed -i "s/SKIP_VALIDATIONS=false/SKIP_VALIDATIONS=true/g" /etc/sysconfig/oracle-xe-21c.conf
 
+# SET CUSTOM CHARSET we8iso8859p1 (ISO5589P1 - ISO 8859-1 West European)
+sed -i 's/^CHARSET=.*$/CHARSET=we8iso8859p1/g' /etc/sysconfig/oracle-xe-21c.conf
+
 # Disable netca to avoid "No IP address found" issue
 mv "${ORACLE_HOME}"/bin/netca "${ORACLE_HOME}"/bin/netca.bak
 echo "exit 0" > "${ORACLE_HOME}"/bin/netca
